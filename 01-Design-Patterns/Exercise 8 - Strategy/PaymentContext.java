@@ -1,0 +1,14 @@
+package DesignPatterns.Exercise08;
+public class PaymentContext {
+    private PaymentStrategy paymentStrategy;
+    public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
+        this.paymentStrategy = paymentStrategy;
+    }
+    public void executePayment(double amount) {
+        if (paymentStrategy == null) {
+            System.out.println("Error: Payment strategy not set.");
+        } else {
+            paymentStrategy.pay(amount);
+        }
+    }
+}
